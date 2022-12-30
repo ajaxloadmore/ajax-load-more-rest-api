@@ -7,7 +7,7 @@
  * Author: Darren Cooney
  * Twitter: @KaptonKaos
  * Author URI: https://connekthq.com
- * Version: 1.2.1
+ * Version: 1.2.2
  * License: GPL
  * Copyright: Darren Cooney & Connekt Media
  *
@@ -17,6 +17,14 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Bail if accessed directly.
 }
+
+/**
+ * Define plugin constants.
+ */
+define( 'ALM_RESTAPI_PATH', plugin_dir_path( __FILE__ ) );
+define( 'ALM_RESTAPI_URL', plugins_url( '', __FILE__ ) );
+define( 'ALM_RESTAPI_VERSION', '1.2.2' );
+define( 'ALM_RESTAPI_RELEASE', 'December 30, 2022' );
 
 /**
  * Activation hook
@@ -55,14 +63,6 @@ function alm_restapi_admin_notice() {
 }
 add_action( 'admin_notices', 'alm_restapi_admin_notice' );
 
-/**
- * Define plugin constants.
- */
-define( 'ALM_RESTAPI_PATH', plugin_dir_path( __FILE__ ) );
-define( 'ALM_RESTAPI_URL', plugins_url( '', __FILE__ ) );
-define( 'ALM_RESTAPI_VERSION', '1.2.1' );
-define( 'ALM_RESTAPI_RELEASE', 'January 20, 2021' );
-
 if ( ! class_exists( 'ALMRESTAPI' ) ) :
 
 	/**
@@ -100,6 +100,14 @@ if ( ! class_exists( 'ALMRESTAPI' ) ) :
 		 * @since 1.0
 		 */
 		public function alm_get_rest_api_template( $repeater, $type ) {
+			if ( is_admin() || defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+				/**
+				 * Bail if in WP admin.
+				 *
+				 * @see https://wordpress.stackexchange.com/a/367515/12868
+				 */
+				return;
+			}
 			$template = alm_get_current_repeater( $repeater, $type );
 			require $template;
 		}
