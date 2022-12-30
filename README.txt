@@ -6,7 +6,7 @@ Plugin URI: https://connekthq.com/ajax-load-more/extensions/rest-api/
 Donate link: https://connekthq.com/donate/
 Tags: ajax load more, rest api, api, rest, ajax, infinite scroll, javascript, query, endpoints, endpoint, lazy load
 Requires at least: 4.0
-Tested up to: 6.0
+Tested up to: 6.1
 Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
