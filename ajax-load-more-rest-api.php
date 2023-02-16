@@ -7,7 +7,7 @@
  * Author: Darren Cooney
  * Twitter: @KaptonKaos
  * Author URI: https://connekthq.com
- * Version: 1.2.2
+ * Version: 1.2.3
  * License: GPL
  * Copyright: Darren Cooney & Connekt Media
  *
@@ -23,8 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 define( 'ALM_RESTAPI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ALM_RESTAPI_URL', plugins_url( '', __FILE__ ) );
-define( 'ALM_RESTAPI_VERSION', '1.2.2' );
-define( 'ALM_RESTAPI_RELEASE', 'December 30, 2022' );
+define( 'ALM_RESTAPI_VERSION', '1.2.3' );
+define( 'ALM_RESTAPI_RELEASE', 'February 16, 2023' );
 
 /**
  * Activation hook
