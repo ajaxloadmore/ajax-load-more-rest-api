@@ -7,7 +7,7 @@ Donate link: https://connekthq.com/donate/
 Tags: ajax load more, rest api, api, rest, ajax, infinite scroll, javascript, query, endpoints, endpoint, lazy load
 Requires at least: 4.0
 Tested up to: 6.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,9 @@ Yes! As long as you are using the default /wp-json/ajaxloadmore/posts endpoint a
 
 
 == Changelog ==
+
+= 1.2.3 - February 23, 2023 =
+* FIX: Fixed up PHP warnign messages found in debug log for default endpoint.
 
 = 1.2.2 - December 30, 2022 =
 * FIX: Added fix for saving posts in editor when REST API shortcode in place.

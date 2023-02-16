@@ -46,8 +46,9 @@ function alm_get_posts( $data ) {
 	$response = [];
 
 	// Set Defaults.
-	$args = [];
-	$page = $data['page'];
+	$args           = [];
+	$page           = isset( $data['page'] ) ? $data['page'] : 0;
+	$posts_per_page = isset( $data['posts_per_page'] ) ? $data['posts_per_page'] : 5;
 
 	if ( method_exists( 'ALM_QUERY_ARGS', 'alm_build_queryargs' ) ) {
 		/**
@@ -67,7 +68,7 @@ function alm_get_posts( $data ) {
 	 *
 	 * @see https://connekthq.com/plugins/ajax-load-more/docs/variables/
 	 */
-	$alm_item        = $args['page'] * $posts_per_page;
+	$alm_item        = $page * $posts_per_page;
 	$alm_found_posts = $posts->found_posts;
 	$alm_post_count  = $posts->post_count;
 	$alm_current     = 0;
@@ -90,7 +91,7 @@ function alm_get_posts( $data ) {
 
 		// Build $data JSON object.
 		$data[] = [
-			'alm_page'        => $args['page'] + 1,
+			'alm_page'        => $page + 1,
 			'alm_item'        => ( $alm_item++ ) + 1,
 			'alm_current'     => $alm_current,
 			'alm_found_posts' => $alm_found_posts,
