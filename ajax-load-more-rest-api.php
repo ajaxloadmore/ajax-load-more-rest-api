@@ -4,12 +4,11 @@
  * Plugin URI: https://connekthq.com/plugins/ajax-load-more/extensions/rest-api/
  * Description: An Ajax Load More extension for infinite scrolling with the WordPress REST API
  * Text Domain: ajax-load-more-rest-api
- * Author: Darren Cooney
- * Twitter: @KaptonKaos
+ * Author: Erick Danzer
  * Author URI: https://connekthq.com
- * Version: 1.2.3
+ * Version: 1.2.4
  * License: GPL
- * Copyright: Darren Cooney & Connekt Media
+ * Copyright: Erick Danzer & AjaxWP LLC
  *
  * @package ALMRESTAPI
  */
@@ -23,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 define( 'ALM_RESTAPI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ALM_RESTAPI_URL', plugins_url( '', __FILE__ ) );
-define( 'ALM_RESTAPI_VERSION', '1.2.3' );
+define( 'ALM_RESTAPI_VERSION', '1.2.4' );
 define( 'ALM_RESTAPI_RELEASE', 'February 16, 2023' );
 
 /**
