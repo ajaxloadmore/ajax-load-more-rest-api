@@ -74,7 +74,7 @@ Yes! As long as you are using the default /wp-json/ajaxloadmore/posts endpoint a
 
 == Changelog ==
 
-= 1.1.4 - November 11, 2024 = 
+= 1.2.4 - November 11, 2024 = 
 * UPDATE: Readme, contributors, WordPress tested version
 * NOTE: Plugin has new ownership
 
