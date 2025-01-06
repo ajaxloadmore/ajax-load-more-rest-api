@@ -4,11 +4,11 @@
  * Plugin URI: https://connekthq.com/plugins/ajax-load-more/extensions/rest-api/
  * Description: An Ajax Load More extension for infinite scrolling with the WordPress REST API
  * Text Domain: ajax-load-more-rest-api
- * Author: Erick Danzer
+ * Author: Darren Cooney
  * Author URI: https://connekthq.com
  * Version: 1.2.4
  * License: GPL
- * Copyright: Erick Danzer & AjaxWP LLC
+ * Copyright: Connekt Media & Darren Cooney
  *
  * @package ALMRESTAPI
  */
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'ALM_RESTAPI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ALM_RESTAPI_URL', plugins_url( '', __FILE__ ) );
 define( 'ALM_RESTAPI_VERSION', '1.2.4' );
-define( 'ALM_RESTAPI_RELEASE', 'February 16, 2023' );
+define( 'ALM_RESTAPI_RELEASE', 'December 4, 2024' );
 
 /**
  * Activation hook
@@ -47,8 +47,7 @@ register_activation_hook( __FILE__, 'alm_rest_api_install' );
  * Display admin notice if plugin does not meet the requirements.
  */
 function alm_restapi_admin_notice() {
-	$slug   = 'ajax-load-more';
-	$plugin = $slug . '-rest-api';
+	$slug = 'ajax-load-more';
 	// Ajax Load More Notice.
 	if ( get_transient( 'alm_restapi_admin_notice' ) ) {
 		$install_url = get_admin_url() . '/update.php?action=install-plugin&plugin=' . $slug . '&_wpnonce=' . wp_create_nonce( 'install-plugin_' . $slug );
@@ -73,11 +72,11 @@ if ( ! class_exists( 'ALMRESTAPI' ) ) :
 		 * Set up construct functions.
 		 */
 		public function __construct() {
-			add_action( 'alm_rest_api_installed', array( &$this, 'alm_rest_api_installed' ) );
-			add_action( 'alm_rest_api_settings', array( &$this, 'alm_rest_api_settings' ) );
-			add_action( 'wp_enqueue_scripts', array( &$this, 'alm_rest_api_enqueue_scripts' ) );
-			add_action( 'alm_get_rest_api_template', array( &$this, 'alm_get_rest_api_template' ), 10, 2 );
-			add_filter( 'alm_rest_api_shortcode', array( &$this, 'alm_rest_api_shortcode' ), 10, 6 );
+			add_action( 'alm_rest_api_installed', [ &$this, 'alm_rest_api_installed' ] );
+			add_action( 'alm_rest_api_settings', [ &$this, 'alm_rest_api_settings' ] );
+			add_action( 'wp_enqueue_scripts', [ &$this, 'alm_rest_api_enqueue_scripts' ] );
+			add_action( 'alm_get_rest_api_template', [ &$this, 'alm_get_rest_api_template' ], 10, 2 );
+			add_filter( 'alm_rest_api_shortcode', [ &$this, 'alm_rest_api_shortcode' ], 10, 6 );
 			load_plugin_textdomain( 'ajax-load-more-rest-api', false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
 			require_once ALM_RESTAPI_PATH . 'endpoints.php';
 		}
@@ -185,7 +184,6 @@ if ( ! class_exists( 'ALMRESTAPI' ) ) :
 				'ajax-load-more',
 				'alm_rest_api_settings'
 			);
-
 		}
 	}
 
