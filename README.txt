@@ -7,7 +7,7 @@ Donate link: https://connekthq.com/donate/
 Tags: ajax load more, rest api, endpoints, lazy load, infinite scroll
 Requires at least: 4.0 
 Tested up to: 6.8
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,8 +68,9 @@ Yes! As long as you are using the default /wp-json/ajaxloadmore/posts endpoint a
 
 == Changelog ==
 
-= 1.2.5 - June 5, 2025 = 
-* UPDATE: Updated require plugin, readme and WP tested version.
+= 1.2.6 - June 5, 2025 = 
+* NEW: Adding Ajax Load More as a required plugin.
+* UPDATE: Code cleanup, readme and WP tested version.
 
 = 1.2.4 - November 11, 2024 = 
 * UPDATE: Readme, contributors, WordPress tested version

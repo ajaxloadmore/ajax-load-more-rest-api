@@ -6,7 +6,7 @@
  * Text Domain: ajax-load-more-rest-api
  * Author: Darren Cooney
  * Author URI: https://connekthq.com
- * Version: 1.2.5
+ * Version: 1.2.6
  * License: GPL
  * Copyright: Connekt Media & Darren Cooney
  * Requires Plugins: ajax-load-more
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 define( 'ALM_RESTAPI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ALM_RESTAPI_URL', plugins_url( '', __FILE__ ) );
-define( 'ALM_RESTAPI_VERSION', '1.2.5' );
+define( 'ALM_RESTAPI_VERSION', '1.2.6' );
 define( 'ALM_RESTAPI_RELEASE', 'June 5, 2025' );
 
 /**
