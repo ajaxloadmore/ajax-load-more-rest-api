@@ -6,8 +6,8 @@ Plugin URI: https://connekthq.com/ajax-load-more/extensions/rest-api/
 Donate link: https://connekthq.com/donate/
 Tags: ajax load more, rest api, endpoints, lazy load, infinite scroll
 Requires at least: 4.0 
-Tested up to: 6.7
-Stable tag: 1.2.4
+Tested up to: 6.8
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,11 +48,7 @@ No, all Repeater Templates that are used with the REST API add-on must be coded 
 = Are all Ajax Load More shortcode parameters available with the REST API add-on? =
 Yes! As long as you are using the default /wp-json/ajaxloadmore/posts endpoint all values passed via shortcode will be parsed in your API call.
 
-
-
 == Screenshots ==
-
-
 
 == Installation ==
 
@@ -70,9 +66,10 @@ Yes! As long as you are using the default /wp-json/ajaxloadmore/posts endpoint a
 4. Ensure Ajax Load More is installed prior to activating the plugin.
 5. Activate the plugin in the WP plugin dashboard.
 
-
-
 == Changelog ==
+
+= 1.2.5 - June 5, 2025 = 
+* UPDATE: Updated require plugin, readme and WP tested version.
 
 = 1.2.4 - November 11, 2024 = 
 * UPDATE: Readme, contributors, WordPress tested version
