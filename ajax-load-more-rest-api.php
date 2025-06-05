@@ -27,24 +27,6 @@ define( 'ALM_RESTAPI_VERSION', '1.2.5' );
 define( 'ALM_RESTAPI_RELEASE', 'June 5, 2025' );
 
 /**
- * Activation hook
- *
- * @since 1.0
- */
-function alm_rest_api_install() {
-	if ( ! is_plugin_active( 'ajax-load-more/ajax-load-more.php' ) ) {
-		set_transient( 'alm_restapi_admin_notice', true, 5 );
-	}
-
-	// If ! REST API plugin and WP Core < 4.7.
-	global $wp_version;
-	if ( ! is_plugin_active( 'rest-api/plugin.php' ) && ! version_compare( get_bloginfo( 'version' ), '4.7', '>=' ) ) {
-		die( 'You must install and activate <a href="https://wordpress.org/plugins/rest-api/">WordPress REST API (Version 2)</a> OR be running WordPress 4.7+ before installing the Ajax Load More REST API extension.' );
-	}
-}
-register_activation_hook( __FILE__, 'alm_rest_api_install' );
-
-/**
  * Display admin notice if plugin does not meet the requirements.
  */
 function alm_restapi_admin_notice() {
